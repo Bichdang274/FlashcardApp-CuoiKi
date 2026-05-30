@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_dark">
+
+    <!-- Main Quiz Content -->
+    <LinearLayout android:id="@+id/quizContent"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <!-- Header -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingHorizontal="16dp" android:paddingTop="48dp" android:paddingBottom="8dp">
+            <ImageButton android:id="@+id/btnBack"
+                android:layout_width="40dp" android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_back"
+                android:background="@drawable/bg_icon_btn"
+                android:tint="@color/text_primary"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="horizontal"
+                android:gravity="center" android:layout_marginHorizontal="12dp">
+                <TextView android:id="@+id/tvProgress"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="1" android:textColor="@color/text_primary"
+                    android:textSize="18sp" android:textStyle="bold"/>
+                <TextView android:id="@+id/tvTotal"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="/10" android:textColor="@color/text_secondary" android:textSize="14sp"/>
+            </LinearLayout>
+            <TextView android:id="@+id/tvScore"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Điểm: 0" android:textColor="@color/purple_300"
+                android:textSize="14sp" android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Quiz progress bar -->
+        <ProgressBar style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent" android:layout_height="4dp"
+            android:progressDrawable="@drawable/progress_gradient"
+            android:progress="10" android:max="100"
+            android:layout_marginHorizontal="16dp"/>
+
+        <!-- Timer row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingHorizontal="16dp" android:paddingTop="8dp" android:paddingBottom="4dp">
+            <TextView android:id="@+id/tvTimeLeft"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:text="15"
+                android:textColor="#4ADE80"
+                android:textSize="16sp" android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/bg_icon_btn"/>
+            <ProgressBar style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:id="@+id/timerBar"
+                android:layout_width="0dp" android:layout_height="8dp"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:progressDrawable="@drawable/progress_gradient"
+                android:progress="100" android:max="100"/>
+        </LinearLayout>
+
+        <!-- Question card -->
+        <FrameLayout android:id="@+id/cardQuestion"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="20dp" android:paddingVertical="8dp">
+
+            <LinearLayout android:id="@+id/cardInner"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_card_study" android:padding="24dp">
+                <TextView android:id="@+id/tvEmoji"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🐕" android:textSize="48sp" android:layout_marginBottom="10dp"/>
+                <TextView android:id="@+id/tvQuestion"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text='"Dog" nghĩa là gì?'
+                    android:textColor="@color/text_primary" android:textSize="18sp"
+                    android:textStyle="bold" android:gravity="center"/>
+                <TextView android:id="@+id/tvQuestionSub"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary" android:textSize="13sp"
+                    android:gravity="center" android:layout_marginTop="4dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+            <!-- Feedback overlay (✓ / ✗) -->
+            <TextView android:id="@+id/tvFeedback"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingHorizontal="28dp" android:paddingVertical="14dp"
+                android:textSize="28sp" android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+        <!-- Options 2×2 grid -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp" android:paddingBottom="24dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp">
+                <Button android:id="@+id/btnOption0"
+                    android:layout_width="0dp" android:layout_height="56dp"
+                    android:layout_weight="1" android:text="Option A"
+                    android:textColor="@color/text_primary" android:textSize="13sp"
+                    android:background="@drawable/bg_option_default"
+                    android:stateListAnimator="@null"
+                    android:layout_marginEnd="4dp"/>
+                <Button android:id="@+id/btnOption1"
+                    android:layout_width="0dp" android:layout_height="56dp"
+                    android:layout_weight="1" android:text="Option B"
+                    android:textColor="@color/text_primary" android:textSize="13sp"
+                    android:background="@drawable/bg_option_default"
+                    android:stateListAnimator="@null"
+                    android:layout_marginStart="4dp"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button android:id="@+id/btnOption2"
+                    android:layout_width="0dp" android:layout_height="56dp"
+                    android:layout_weight="1" android:text="Option C"
+                    android:textColor="@color/text_primary" android:textSize="13sp"
+                    android:background="@drawable/bg_option_default"
+                    android:stateListAnimator="@null"
+                    android:layout_marginEnd="4dp"/>
+                <Button android:id="@+id/btnOption3"
+                    android:layout_width="0dp" android:layout_height="56dp"
+                    android:layout_weight="1" android:text="Option D"
+                    android:textColor="@color/text_primary" android:textSize="13sp"
+                    android:background="@drawable/bg_option_default"
+                    android:stateListAnimator="@null"
+                    android:layout_marginStart="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Streak overlay (centered on top of everything) -->
+    <TextView android:id="@+id/tvStreakOverlay"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="🔥 Streak x3!"
+        android:textColor="@color/white" android:textSize="28sp" android:textStyle="bold"
+        android:background="@drawable/bg_btn_gradient"
+        android:paddingHorizontal="32dp" android:paddingVertical="14dp"
+        android:visibility="gone"/>
+
+    <!-- Result screen -->
+    <LinearLayout android:id="@+id/resultScreen"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center"
+        android:padding="32dp" android:visibility="gone">
+        <TextView android:id="@+id/tvResultEmoji"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🏆" android:textSize="72sp" android:layout_marginBottom="12dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Kết quả" android:textColor="@color/text_secondary"
+            android:textSize="16sp" android:layout_marginBottom="8dp"/>
+        <TextView android:id="@+id/tvResultScore"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="8/10" android:textColor="@color/text_primary"
+            android:textSize="48sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+        <ProgressBar style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/circularProgress"
+            android:layout_width="match_parent" android:layout_height="8dp"
+            android:progressDrawable="@drawable/progress_gradient"
+            android:progress="80" android:max="100" android:layout_marginBottom="8dp"/>
+        <TextView android:id="@+id/tvPct"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="80%" android:textColor="@color/purple_300"
+            android:textSize="24sp" android:textStyle="bold" android:layout_marginBottom="4dp"/>
+        <TextView android:id="@+id/tvBestStreak"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🔥 Best streak: 0"
+            android:textColor="@color/text_secondary" android:textSize="14sp"
+            android:layout_marginBottom="8dp"/>
+        <TextView android:id="@+id/tvResultSubtitle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Xuất sắc!" android:textColor="@color/text_secondary"
+            android:textSize="16sp" android:layout_marginBottom="40dp"/>
+        <Button android:id="@+id/btnRestart"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:text="🔄  Làm lại"
+            android:textColor="@color/white" android:textStyle="bold" android:textSize="16sp"
+            android:background="@drawable/bg_btn_gradient"
+            android:stateListAnimator="@null" android:layout_marginBottom="12dp"/>
+        <Button android:id="@+id/btnBackToHome"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:text="Về trang chủ"
+            android:textColor="@color/white" android:textStyle="bold" android:textSize="16sp"
+            android:background="@drawable/bg_nav_btn"
+            android:stateListAnimator="@null"/>
+    </LinearLayout>
+</FrameLayout>
