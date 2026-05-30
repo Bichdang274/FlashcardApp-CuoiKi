@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="24dp" android:paddingTop="20dp"
+    android:background="@drawable/bg_gradient_dark">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="32dp">
+        <ImageButton android:id="@+id/btnBack" android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_arrow_back" android:background="@drawable/bg_icon_btn" android:tint="@color/white"/>
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Xác nhận OTP" android:textColor="@color/white" android:textSize="20sp" android:textStyle="bold" android:gravity="center"/>
+        <View android:layout_width="40dp" android:layout_height="40dp"/>
+    </LinearLayout>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:text="📧" android:textSize="64sp" android:layout_marginBottom="16dp"/>
+    <TextView android:id="@+id/tvEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mã OTP đã được gửi" android:textColor="#99FFFFFF" android:textSize="14sp" android:gravity="center" android:layout_marginBottom="32dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="32dp">
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etOtp1" android:layout_width="44dp" android:layout_height="56dp" android:background="@drawable/bg_otp_box" android:gravity="center" android:inputType="number" android:maxLength="1" android:textColor="@color/white" android:textSize="22sp" android:textStyle="bold" android:layout_marginHorizontal="4dp"/>
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etOtp2" android:layout_width="44dp" android:layout_height="56dp" android:background="@drawable/bg_otp_box" android:gravity="center" android:inputType="number" android:maxLength="1" android:textColor="@color/white" android:textSize="22sp" android:textStyle="bold" android:layout_marginHorizontal="4dp"/>
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etOtp3" android:layout_width="44dp" android:layout_height="56dp" android:background="@drawable/bg_otp_box" android:gravity="center" android:inputType="number" android:maxLength="1" android:textColor="@color/white" android:textSize="22sp" android:textStyle="bold" android:layout_marginHorizontal="4dp"/>
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etOtp4" android:layout_width="44dp" android:layout_height="56dp" android:background="@drawable/bg_otp_box" android:gravity="center" android:inputType="number" android:maxLength="1" android:textColor="@color/white" android:textSize="22sp" android:textStyle="bold" android:layout_marginHorizontal="4dp"/>
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etOtp5" android:layout_width="44dp" android:layout_height="56dp" android:background="@drawable/bg_otp_box" android:gravity="center" android:inputType="number" android:maxLength="1" android:textColor="@color/white" android:textSize="22sp" android:textStyle="bold" android:layout_marginHorizontal="4dp"/>
+        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etOtp6" android:layout_width="44dp" android:layout_height="56dp" android:background="@drawable/bg_otp_box" android:gravity="center" android:inputType="number" android:maxLength="1" android:textColor="@color/white" android:textSize="22sp" android:textStyle="bold" android:layout_marginHorizontal="4dp"/>
+    </LinearLayout>
+    <Button android:id="@+id/btnVerify" android:layout_width="match_parent" android:layout_height="56dp" android:text="Xác nhận" android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold" android:background="@drawable/bg_btn_gradient" android:stateListAnimator="@null"/>
+</LinearLayout>
