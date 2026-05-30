@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <!-- Drag handle -->
+        <View
+            android:layout_width="40dp" android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp" android:layout_marginBottom="4dp"
+            android:background="#44FFFFFF"/>
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingStart="20dp" android:paddingEnd="12dp">
+            <TextView
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Chuỗi học tập"
+                android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold"/>
+            <ImageButton
+                android:id="@+id/btnClose"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:background="@drawable/bg_icon_btn"
+                android:src="@drawable/ic_close"
+                android:contentDescription="Đóng"/>
+        </LinearLayout>
+
+        <!-- Streak display -->
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center"
+            android:paddingTop="8dp" android:paddingBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="80dp" android:layout_height="80dp"
+                android:background="@drawable/bg_stat_orange"
+                android:gravity="center">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🔥" android:textSize="36sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvStreakCount"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFFFFF" android:textSize="48sp" android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="ngày liên tiếp"
+                android:textColor="#8899AA" android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- 30-day calendar -->
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_chip_inactive"
+            android:padding="16dp"
+            android:layout_marginStart="20dp" android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="30 NGÀY GẦN NHẤT"
+                android:textColor="#8899AA" android:textSize="11sp" android:letterSpacing="0.08"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Calendar grid - 6 rows of 5 days = 30 days -->
+            <LinearLayout android:id="@+id/calendarGrid"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
