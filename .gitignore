@@ -1,0 +1,19 @@
+# Local config (machine-specific)
+local.properties
+
+# Gradle
+.gradle/
+
+# Build outputs
+build/
+app/build/
+
+# IDE
+.idea/
+*.iml
+
+# Claude Code
+.claude/
+
+# Logs / temp
+*.log

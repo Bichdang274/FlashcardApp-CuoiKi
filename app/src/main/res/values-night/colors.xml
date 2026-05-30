@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Adaptive colors — dark mode (night) -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#CCCCDD</color>
+    <color name="text_hint">#888899</color>
+    <color name="bg_surface">#0A0E1A</color>
+    <color name="bg_surface_2">#1E1B4B</color>
+    <color name="bg_card_surface">#141D30</color>
+    <color name="nav_bg_adaptive">#0C1020</color>
+
+    <!-- Auth screen adaptive colors -->
+    <color name="auth_text_title">#FFFFFF</color>
+    <color name="auth_text_label">#99FFFFFF</color>
+    <color name="auth_text_subtitle">#80FFFFFF</color>
+    <color name="input_box_stroke">#33FFFFFF</color>
+    <color name="input_box_stroke_active">#A855F7</color>
+    <color name="input_box_bg">#1AFFFFFF</color>
+</resources>

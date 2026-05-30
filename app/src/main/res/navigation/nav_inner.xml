@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_inner"
+    app:startDestination="@id/homeTab">
+
+    <fragment
+        android:id="@+id/homeTab"
+        android:name="com.example.flashcardapp.ui.home.HomeFragment"
+        android:label="Trang chủ"/>
+
+    <fragment
+        android:id="@+id/dictionaryTab"
+        android:name="com.example.flashcardapp.ui.dictionary.DictionaryFragment"
+        android:label="Từ điển"/>
+
+    <fragment
+        android:id="@+id/accountTab"
+        android:name="com.example.flashcardapp.ui.account.AccountFragment"
+        android:label="Tài khoản"/>
+
+</navigation>

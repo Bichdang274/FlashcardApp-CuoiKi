@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#0A0E1A</color>
+    <color name="bg_dark_2">#15203A</color>
+    <color name="bg_dark_card">#141D30</color>
+    <color name="nav_bg">#0C1020</color>
+
+    <color name="purple_300">#C084FC</color>
+    <color name="purple_400">#B766F8</color>
+    <color name="purple_500">#A855F7</color>
+    <color name="purple_600">#9333EA</color>
+    <color name="pink_500">#EC4899</color>
+    <color name="pink_600">#DB2777</color>
+
+    <color name="emerald_500">#10B981</color>
+    <color name="orange_500">#F97316</color>
+    <color name="yellow_500">#EAB308</color>
+    <color name="blue_500">#3B82F6</color>
+
+    <color name="correct_green">#22C55E</color>
+    <color name="wrong_red">#EF4444</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="text_muted">#99AABB</color>
+
+    <color name="nav_active">#A855F7</color>
+    <color name="nav_inactive">#5A6B80</color>
+
+    <!-- Adaptive colors — light mode (day) -->
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#5C5C7A</color>
+    <color name="text_hint">#8E8EA8</color>
+    <color name="bg_surface">#EDE8FF</color>
+    <color name="bg_surface_2">#E0D8FF</color>
+    <color name="bg_card_surface">#FFFFFF</color>
+    <color name="nav_bg_adaptive">#FFFFFF</color>
+
+    <!-- Auth screen adaptive colors -->
+    <color name="auth_text_title">#2D1B69</color>
+    <color name="auth_text_label">#4A3B6F</color>
+    <color name="auth_text_subtitle">#7C6B9F</color>
+    <color name="input_box_stroke">#C4B5FD</color>
+    <color name="input_box_stroke_active">#9333EA</color>
+    <color name="input_box_bg">#F5F2FF</color>
+</resources>

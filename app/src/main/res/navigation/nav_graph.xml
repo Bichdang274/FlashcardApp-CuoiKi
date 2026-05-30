@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashDest">
+
+    <!-- Splash / Init -->
+    <fragment
+        android:id="@+id/splashDest"
+        android:name="com.example.flashcardapp.ui.SplashFragment"
+        android:label="Splash">
+        <action android:id="@+id/action_splash_to_onboarding" app:destination="@id/onboardingDest" app:popUpTo="@id/splashDest" app:popUpToInclusive="true"/>
+        <action android:id="@+id/action_splash_to_login" app:destination="@id/loginDest" app:popUpTo="@id/splashDest" app:popUpToInclusive="true"/>
+        <action android:id="@+id/action_splash_to_main" app:destination="@id/mainDest" app:popUpTo="@id/splashDest" app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!-- Onboarding -->
+    <fragment
+        android:id="@+id/onboardingDest"
+        android:name="com.example.flashcardapp.ui.onboarding.OnboardingFragment"
+        android:label="Onboarding">
+        <action android:id="@+id/action_onboarding_to_login" app:destination="@id/loginDest" app:popUpTo="@id/onboardingDest" app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!-- Auth -->
+    <fragment
+        android:id="@+id/loginDest"
+        android:name="com.example.flashcardapp.ui.auth.LoginFragment"
+        android:label="Đăng nhập">
+        <action android:id="@+id/action_login_to_register" app:destination="@id/registerDest"/>
+        <action android:id="@+id/action_login_to_forgotPassword" app:destination="@id/forgotPasswordDest"/>
+        <action android:id="@+id/action_login_to_main" app:destination="@id/mainDest" app:popUpTo="@id/loginDest" app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerDest"
+        android:name="com.example.flashcardapp.ui.auth.RegisterFragment"
+        android:label="Đăng ký">
+        <action android:id="@+id/action_register_to_main" app:destination="@id/mainDest" app:popUpTo="@id/loginDest" app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordDest"
+        android:name="com.example.flashcardapp.ui.auth.ForgotPasswordFragment"
+        android:label="Quên mật khẩu">
+        <action android:id="@+id/action_forgotPassword_to_verifyOTP" app:destination="@id/verifyOTPDest">
+            <argument android:name="email" android:defaultValue="" app:argType="string"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyOTPDest"
+        android:name="com.example.flashcardapp.ui.auth.VerifyOTPFragment"
+        android:label="Xác nhận OTP">
+        <argument android:name="email" android:defaultValue="" app:argType="string"/>
+        <action android:id="@+id/action_verifyOTP_to_resetPassword" app:destination="@id/resetPasswordDest"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordDest"
+        android:name="com.example.flashcardapp.ui.auth.ResetPasswordFragment"
+        android:label="Đặt lại mật khẩu">
+        <action android:id="@+id/action_resetPassword_to_login" app:destination="@id/loginDest" app:popUpTo="@id/forgotPasswordDest" app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!-- Main with bottom nav -->
+    <fragment
+        android:id="@+id/mainDest"
+        android:name="com.example.flashcardapp.ui.home.MainFragment"
+        android:label="Main">
+        <action android:id="@+id/action_main_to_study" app:destination="@id/studyDest"/>
+        <action android:id="@+id/action_main_to_quiz" app:destination="@id/quizDest"/>
+        <action android:id="@+id/action_main_to_setDetail" app:destination="@id/setDetailDest"/>
+        <action android:id="@+id/action_main_to_login" app:destination="@id/loginDest" app:popUpTo="@id/mainDest" app:popUpToInclusive="true"/>
+        <action android:id="@+id/action_main_to_editProfile" app:destination="@id/editProfileDest"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileDest"
+        android:name="com.example.flashcardapp.ui.account.EditProfileFragment"
+        android:label="Chỉnh sửa hồ sơ"/>
+
+    <!-- Full-screen pages -->
+    <fragment
+        android:id="@+id/setDetailDest"
+        android:name="com.example.flashcardapp.ui.set.SetDetailFragment"
+        android:label="Chi tiết bộ thẻ">
+        <argument android:name="setId" android:defaultValue="" app:argType="string"/>
+        <action android:id="@+id/action_setDetail_to_study" app:destination="@id/studyDest"/>
+        <action android:id="@+id/action_setDetail_to_quiz" app:destination="@id/quizDest"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/studyDest"
+        android:name="com.example.flashcardapp.ui.study.StudyFragment"
+        android:label="Học thẻ">
+        <argument android:name="setId" android:defaultValue="" app:argType="string"/>
+        <argument android:name="folderId" android:defaultValue="" app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizDest"
+        android:name="com.example.flashcardapp.ui.quiz.QuizFragment"
+        android:label="Kiểm tra">
+        <argument android:name="setId" android:defaultValue="" app:argType="string"/>
+        <argument android:name="folderId" android:defaultValue="" app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameDest"
+        android:name="com.example.flashcardapp.ui.game.MatchingGameFragment"
+        android:label="Nối từ">
+        <argument android:name="setId" android:defaultValue="" app:argType="string"/>
+        <argument android:name="folderId" android:defaultValue="" app:argType="string"/>
+    </fragment>
+
+</navigation>
