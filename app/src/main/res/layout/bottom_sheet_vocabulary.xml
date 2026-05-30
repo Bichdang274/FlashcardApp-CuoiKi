@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet">
+
+    <!-- Drag handle -->
+    <View
+        android:layout_width="40dp" android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp" android:layout_marginBottom="4dp"
+        android:background="#44FFFFFF"/>
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="56dp"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingStart="20dp" android:paddingEnd="12dp">
+        <TextView
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Từ vựng của bạn"
+            android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold"/>
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:background="@drawable/bg_icon_btn"
+            android:src="@drawable/ic_close"
+            android:contentDescription="Đóng"/>
+    </LinearLayout>
+
+    <!-- Tabs -->
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="42dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_chip_inactive"
+        android:padding="4dp"
+        android:layout_marginStart="20dp" android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp">
+        <TextView
+            android:id="@+id/tabLearned"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Đã học (0)"
+            android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold"
+            android:background="@drawable/bg_tab_selected"
+            android:clickable="true" android:focusable="true"/>
+        <TextView
+            android:id="@+id/tabUnlearned"
+            android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Chưa học (0)"
+            android:textColor="#8899AA" android:textSize="13sp"
+            android:background="@drawable/bg_tab_unselected"
+            android:clickable="true" android:focusable="true"/>
+    </LinearLayout>
+
+    <!-- Empty state -->
+    <LinearLayout
+        android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent" android:layout_height="200dp"
+        android:orientation="vertical" android:gravity="center"
+        android:visibility="gone">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📚" android:textSize="48sp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Chưa học từ nào. Hãy bắt đầu học ngay!"
+            android:textColor="#8899AA" android:textSize="14sp" android:layout_marginTop="12dp"/>
+    </LinearLayout>
+
+    <!-- Word list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvWords"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"/>
+
+</LinearLayout>

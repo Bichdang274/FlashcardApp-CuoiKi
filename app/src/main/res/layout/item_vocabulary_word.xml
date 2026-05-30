@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="16dp" android:paddingEnd="16dp"
+    android:paddingTop="12dp" android:paddingBottom="12dp">
+
+    <!-- Emoji circle -->
+    <LinearLayout
+        android:layout_width="44dp" android:layout_height="44dp"
+        android:background="@drawable/bg_chip_inactive"
+        android:gravity="center"
+        android:layout_marginEnd="12dp">
+        <TextView
+            android:id="@+id/tvEmoji"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📝" android:textSize="20sp"/>
+    </LinearLayout>
+
+    <!-- Word info -->
+    <LinearLayout
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvEnglish"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Word"
+            android:textColor="#FFFFFF" android:textSize="15sp" android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvVietnamese"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Nghĩa"
+            android:textColor="#8899AA" android:textSize="12sp" android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+    <!-- Sound button -->
+    <LinearLayout
+        android:id="@+id/btnSound"
+        android:layout_width="36dp" android:layout_height="36dp"
+        android:background="@drawable/bg_chip_inactive"
+        android:gravity="center"
+        android:clickable="true" android:focusable="true">
+        <ImageView
+            android:layout_width="18dp" android:layout_height="18dp"
+            android:src="@drawable/ic_volume"
+            android:tint="#AABBCC"/>
+    </LinearLayout>
+</LinearLayout>

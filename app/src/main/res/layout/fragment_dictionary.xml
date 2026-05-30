@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_dark">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_gradient_dark"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="56dp" android:paddingBottom="12dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Từ điển" android:textColor="@color/text_primary"
+                android:textSize="24sp" android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                style="@style/InputStyle"
+                app:endIconMode="custom"
+                app:endIconDrawable="@drawable/ic_book"
+                app:endIconTint="@color/purple_400"
+                app:endIconContentDescription="Tra từ điển">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:hint="🔍  Nhập từ rồi nhấn 📖 để tra"
+                    android:textColor="@color/text_primary" android:textColorHint="@color/text_hint"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <!-- Lookup result card -->
+        <LinearLayout android:id="@+id/cardLookup"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_dark"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            android:visibility="gone">
+
+            <ProgressBar android:id="@+id/lookupProgress"
+                android:layout_width="32dp" android:layout_height="32dp"
+                android:layout_gravity="center_horizontal"
+                android:indeterminateTint="@color/purple_500"
+                android:visibility="gone"/>
+
+            <TextView android:id="@+id/tvLookupError"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textColor="@color/wrong_red" android:textSize="14sp"
+                android:gravity="center" android:padding="4dp"
+                android:visibility="gone"/>
+
+            <LinearLayout android:id="@+id/lookupContent"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:id="@+id/tvLookupWord"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary" android:textSize="22sp" android:textStyle="bold"/>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:layout_marginTop="4dp">
+                            <TextView android:id="@+id/tvLookupPhonetic"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:textColor="#C084FC" android:textSize="14sp" android:layout_marginEnd="8dp"/>
+                            <TextView android:id="@+id/tvLookupPos"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:textColor="@color/text_secondary" android:textSize="11sp"
+                                android:background="@drawable/bg_chip_inactive"
+                                android:paddingHorizontal="10dp" android:paddingVertical="3dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageButton android:id="@+id/btnLookupSpeak"
+                            android:layout_width="34dp" android:layout_height="34dp"
+                            android:src="@drawable/ic_volume"
+                            android:background="@drawable/bg_icon_btn"
+                            android:tint="#C084FC" android:layout_marginEnd="6dp"
+                            android:contentDescription="Phát âm"/>
+                        <ImageButton android:id="@+id/btnLookupSave"
+                            android:layout_width="34dp" android:layout_height="34dp"
+                            android:src="@drawable/ic_folder_add"
+                            android:background="@drawable/bg_icon_btn"
+                            android:tint="#A78BFA" android:layout_marginEnd="6dp"
+                            android:contentDescription="Lưu từ"/>
+                        <ImageButton android:id="@+id/btnLookupClose"
+                            android:layout_width="34dp" android:layout_height="34dp"
+                            android:src="@drawable/ic_close"
+                            android:background="@drawable/bg_icon_btn"
+                            android:tint="@color/text_secondary"
+                            android:contentDescription="Đóng"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/bg_surface_2" android:layout_marginVertical="12dp"/>
+
+                <TextView android:id="@+id/tvLookupDef"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/text_primary" android:textSize="14sp"
+                    android:lineSpacingMultiplier="1.4"/>
+
+                <TextView android:id="@+id/tvLookupExample"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="@color/text_hint" android:textSize="13sp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Saved words section -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:paddingHorizontal="20dp" android:paddingTop="16dp" android:paddingBottom="8dp">
+            <TextView android:id="@+id/tvSavedLabel"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Từ đã lưu"
+                android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold"/>
+            <TextView android:id="@+id/tvWordCount"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="0 từ"
+                android:textColor="@color/text_secondary" android:textSize="13sp"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvEmpty"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Chưa có từ nào. Tra từ rồi nhấn 📁 để lưu."
+            android:textColor="@color/text_secondary" android:textSize="14sp"
+            android:gravity="center" android:padding="24dp"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSavedWords"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="100dp"
+            android:clipToPadding="false"/>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
