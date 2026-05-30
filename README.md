@@ -109,8 +109,3 @@ Quyền sử dụng (AndroidManifest): `INTERNET`, `POST_NOTIFICATIONS`, `SCHEDU
 | **Bích** | Khởi tạo project, cấu hình chung, Onboarding, Đăng nhập / Đăng ký, lớp dữ liệu Supabase |
 | **Trang** | Home, Study, Quiz, Matching Game, Set detail |
 | **An** | Dictionary, Account |
-
-## 🌿 Nhánh Git
-
-- `main` — bản tích hợp đầy đủ (build & chạy được).
-- `Trang-dev`, `An-dev` — nhánh tính năng của từng người (dựa trên nền chung của Bích).
